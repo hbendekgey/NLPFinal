@@ -2,3 +2,4 @@
 bhtsne/*
 ENV/
 ngram/data/
+.DS_Store
