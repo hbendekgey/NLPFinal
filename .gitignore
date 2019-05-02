@@ -1,2 +1,4 @@
 .ipynb_checkpoints/*
 bhtsne/*
+ENV/
+ngram/data/
