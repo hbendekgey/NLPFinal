@@ -26,3 +26,5 @@ ggplot(val.df, aes(x=x,y=y)) +
   geom_raster(aes(fill = c)) + 
   scale_fill_gradientn(colours=pal) + 
   labs(x="",y="",fill="")
+
+dist[c(80:83),c(80:83)]
