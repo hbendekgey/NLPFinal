@@ -4,17 +4,19 @@ library(ggpubr)
 library(dplyr)
 library(readr)
 
+n = 186
+
 dist <- read_csv("Desktop/NLPfinal/dist.tsv")
 
-x <- rep(c(1:186),186)
+x <- rep(c(1:n),n)
 y <- c()
-for (i in c(1:186)) {
-  y <- c(y, rep(i,186))
+for (i in c(1:n)) {
+  y <- c(y, rep(i,n))
 }
-vals <- c(rep(0,186^2))
+vals <- c(rep(0,n^2))
 k <- 1
 for (row in dist) {
-  for (j in c(1:186)) {
+  for (j in c(1:n)) {
     vals[k] <- row[j]
     k <- k + 1
   }
