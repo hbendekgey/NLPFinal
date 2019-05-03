@@ -4,9 +4,9 @@ library(ggpubr)
 library(dplyr)
 library(readr)
 
-n = 186
+n = 9
 
-dist <- read_csv("Desktop/NLPfinal/idfdist.tsv")
+dist <- read_csv("Desktop/NLPfinal/szndist.tsv")
 
 x <- rep(c(1:n),n)
 y <- c()
@@ -27,10 +27,8 @@ val.df <- data.frame(x=x,y=y,c=vals)
 ggplot(val.df, aes(x=x,y=y)) + 
   geom_raster(aes(fill = c)) + 
   scale_fill_gradientn(colours=pal) + 
-  labs(x="",y="",fill="")
-
-dist[c(80:83),c(80:83)]
-
-dist[131,]
+  labs(x="",y="",fill="") + 
+  scale_x_discrete(name ="Season",limits=c(1:9)) + 
+  scale_y_discrete(name ="Season",limits=c(1:9))
 
 colSums(dist)
