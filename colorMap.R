@@ -6,7 +6,7 @@ library(readr)
 
 n = 186
 
-dist <- read_csv("Desktop/NLPfinal/dist.tsv")
+dist <- read_csv("Desktop/NLPfinal/idfdist.tsv")
 
 x <- rep(c(1:n),n)
 y <- c()
@@ -30,3 +30,7 @@ ggplot(val.df, aes(x=x,y=y)) +
   labs(x="",y="",fill="")
 
 dist[c(80:83),c(80:83)]
+
+dist[131,]
+
+colSums(dist)
