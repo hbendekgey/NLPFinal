@@ -10,7 +10,7 @@ episode_ratings <- episode_ratings %>%
   mutate(season = substr(episode,3,3)) #%>% 
   #filter(perplexity > 75)
 
-ggplot(episode_ratings, aes(x=perplexity, y=rating)) + geom_path()
+ggplot(episode_ratings, aes(x=perplexity, y=rating, col=season)) + geom_path()
 
 
 sppls = c(148.10, 150.49, 161.08, 161.20, 171.72, 156.86, 140.83, 155.31, 154.17)
