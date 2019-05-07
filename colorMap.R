@@ -4,9 +4,8 @@ library(ggpubr)
 library(dplyr)
 library(readr)
 
-n = 9
-
-dist <- read_csv("Desktop/NLPfinal/szndist.tsv")
+dist <- read_csv("Desktop/NLPfinal/idfdist.tsv") # change to file you want
+n <- nrow(dist)
 
 x <- rep(c(1:n),n)
 y <- c()
@@ -27,8 +26,10 @@ val.df <- data.frame(x=x,y=y,c=vals)
 ggplot(val.df, aes(x=x,y=y)) + 
   geom_raster(aes(fill = c)) + 
   scale_fill_gradientn(colours=pal) + 
-  labs(x="",y="",fill="") + 
-  scale_x_discrete(name ="Season",limits=c(1:9)) + 
-  scale_y_discrete(name ="Season",limits=c(1:9))
+  labs(x="",y="",fill="") # + # for seasons  
+  #%scale_x_discrete(name ="Season",limits=c(1:9)) + 
+  #scale_y_discrete(name ="Season",limits=c(1:9))
 
-colSums(dist)
+
+# write the average distances to a file
+# write.table(sort(colSums(dist)), "ep_dists")
